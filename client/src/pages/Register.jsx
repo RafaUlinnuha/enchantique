@@ -13,7 +13,7 @@ const Register = () => {
     };
   return (
     <div className="grid grid-cols-2">
-        <div className="flex items-center justify-center bg-[#FFF7F7]">
+        <div className="bg-gradient-to-r from-red-200 via-red-300 to-yellow-100 h-screen bg-cover flex items-center justify-center">
             <form action="" className="p-10 xl:w-5/12 bg-white shadow-xl rounded-xl">
                 <span className="text-xl font-semibold">Join Our Community</span>
                 <h1 className="mt-1 text-sm">Register your Account</h1>
@@ -24,7 +24,7 @@ const Register = () => {
                     <TextField fullWidth label="Email" type="email" variant="outlined" size="small" />
                 </div>
                 <div className="mt-4">
-                    <FormControl variant="outlined" size="small">
+                    <FormControl fullWidth variant="outlined" size="small">
                         <InputLabel>Password</InputLabel>
                         <OutlinedInput
                             type={showPassword ? 'text' : 'password'}
@@ -46,13 +46,17 @@ const Register = () => {
                 </div>
                 <div className="grid mt-10 text-center gap-2 w-full">
                     <Button variant="contained" size="small">Register</Button>
-                    <Button variant="outlined" size="small">
-                        <Link to="/login">Login</Link>
-                    </Button>
+                    <Link to="/login">
+                        <Button fullWidth variant="outlined" size="small">
+                            Login
+                        </Button>
+                    </Link>
                 </div>
             </form>
         </div>
-        <div className="bg-[url('./assets/bg-login.png')] bg-cover h-screen"></div>
+        <div className="h-screen flex items-center justify-center mx-auto w-[80%]">
+            <img src="./src/assets/register-right.png" />
+        </div>
     </div>
   )
 }

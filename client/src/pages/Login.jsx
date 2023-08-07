@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material'
+import { Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField, createTheme } from '@mui/material'
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
@@ -11,10 +11,13 @@ const Login = () => {
     const handleMouseDownPassword = (event) => {
       event.preventDefault();
     };
+
   return (
     <div className="grid grid-cols-2">
-        <div className="bg-[url('./assets/bg-login.png')] bg-cover h-screen"></div>
-        <div className="flex items-center justify-center bg-[#FFF7F7]">
+        <div className="h-screen flex items-center justify-center mx-auto w-[80%]">
+            <img src="./src/assets/login-right.png" />
+        </div>
+        <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 h-screen bg-cover flex items-center justify-center">
             <form action="" className="p-10 xl:w-5/12 bg-white shadow-xl rounded-xl">
                 <span className="text-xl font-semibold">Welcome Back</span>
                 <h1 className="mt-1 text-sm">Log In to your Account</h1>
@@ -22,7 +25,7 @@ const Login = () => {
                     <TextField fullWidth label="Email" type="email" variant="outlined" size="small" />
                 </div>
                 <div className="mt-4">
-                    <FormControl variant="outlined" size="small">
+                    <FormControl fullWidth variant="outlined" size="small">
                         <InputLabel>Password</InputLabel>
                         <OutlinedInput
                             type={showPassword ? 'text' : 'password'}
@@ -44,9 +47,11 @@ const Login = () => {
                 </div>
                 <div className="grid mt-10 text-center gap-2 w-full">
                     <Button variant="contained" size="small">Login</Button>
-                    <Button variant="outlined" size="small">
-                        <Link to="/register">Register</Link>
-                    </Button>
+                    <Link to="/register">
+                        <Button fullWidth variant="outlined" size="small">
+                            Register
+                        </Button>
+                    </Link>
                 </div>
             </form>
         </div>
