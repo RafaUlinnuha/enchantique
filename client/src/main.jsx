@@ -26,6 +26,8 @@ import Footer from './components/Footer'
 import Single from './pages/Single'
 import Write from './pages/Write'
 
+import 'preline';
+
 function Layout() {
   return (
     <>
